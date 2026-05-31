@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: licznik-canary
+  labels:
+    app: licznik-canary
+    track: canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: licznik-canary
+      track: canary
+  template:
+    metadata:
+      labels:
+        app: licznik-canary
+        track: canary
+        version: "1.0.5"
+    spec:
+      containers:
+        - name: licznik
+          image: devops-counter-app:1.0.5
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
