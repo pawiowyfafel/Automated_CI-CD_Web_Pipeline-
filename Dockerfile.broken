@@ -1,0 +1,2 @@
+FROM node:20-alpine
+CMD ["sh", "-c", "echo 'Błąd krytyczny!' && exit 1"]
