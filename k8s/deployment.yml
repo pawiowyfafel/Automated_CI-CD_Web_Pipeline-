@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: licznik
-          image: devops-counter-app:latest
+          image: devops-counter-app:1.0.4
           imagePullPolicy: Never
           ports:
             - containerPort: 3000
